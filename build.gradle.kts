@@ -33,7 +33,7 @@ repositories {
 // Dependencies are managed with Gradle version catalog - read more: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
 dependencies {
     // Gson for JSON processing
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.code.gson:gson:2.13.1")
 
     testImplementation(libs.junit)
     testImplementation(libs.opentest4j)
