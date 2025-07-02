@@ -1,15 +1,46 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.johnnyhooyo.dsaiassist</id>
-    <name>ds-ai-assist</name>
+    <name>DS AI Assistant for GoLand</name>
     <vendor>johnnyhooyo</vendor>
+    <description><![CDATA[
+        DS AI Assistant for GoLand - A smart AI-powered coding assistant designed specifically for Go development.
+
+        Features:
+        - 🤖 AI-powered chat assistant for Go development
+        - 🎨 Theme-aware UI (follows GoLand's light/dark theme)
+        - 💬 Clean chat interface with floating-style input box
+        - ⌨️ Keyboard shortcuts support (Enter to send, Shift+Enter for new line)
+        - 📱 Right-side tool window with 80/20 layout (history/input)
+        - 🔄 Real-time theme switching without restart
+        - 🐹 Optimized for Go developers and GoLand workflow
+
+        Perfect for Go developers who want an integrated AI assistant directly in GoLand.
+    ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
+    <!-- Required dependency on Go plugin for GoLand -->
+    <depends>org.jetbrains.plugins.go</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.johnnyhooyo.dsaiassist.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <toolWindow factoryClass="com.github.johnnyhooyo.dsaiassist.toolWindow.MyToolWindowFactory"
+                    id="DSAIAssistant"
+                    displayName="DS AI 助手"
+                    anchor="right"
+                    icon="AllIcons.Toolwindows.ToolWindowMessages"/>
         <postStartupActivity implementation="com.github.johnnyhooyo.dsaiassist.startup.MyProjectActivity" />
+
+        <!-- 设置面板 -->
+        <applicationConfigurable
+            parentId="tools"
+            instance="com.github.johnnyhooyo.dsaiassist.settings.SettingsConfigurable"
+            id="com.github.johnnyhooyo.dsaiassist.settings"
+            displayName="DS AI Assistant"/>
+
+        <!-- 应用级服务 -->
+        <applicationService serviceImplementation="com.github.johnnyhooyo.dsaiassist.service.DeepSeekService"/>
+        <applicationService serviceImplementation="com.github.johnnyhooyo.dsaiassist.settings.PluginSettings"/>
     </extensions>
 </idea-plugin>

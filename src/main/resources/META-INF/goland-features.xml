@@ -1,0 +1,6 @@
+<idea-plugin>
+    <!-- GoLand specific features -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Future GoLand-specific extensions can be added here -->
+    </extensions>
+</idea-plugin>

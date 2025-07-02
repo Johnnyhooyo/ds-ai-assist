@@ -17,11 +17,17 @@
 - [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
 
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+DS AI Assistant for GoLand - A smart AI-powered coding assistant with an intuitive chat interface.
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+**Features:**
+- 🤖 AI-powered chat assistant for Go development
+- 🎨 Theme-aware UI that follows GoLand's light/dark theme
+- 💬 Clean chat interface with floating-style input box
+- ⌨️ Keyboard shortcuts support (Enter to send, Shift+Enter for new line)
+- 📱 Right-side tool window with 80/20 layout (history/input)
+- 🔄 Real-time theme switching without restart
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+Perfect for Go developers who want an integrated AI assistant directly in their GoLand IDE.
 <!-- Plugin description end -->
 
 ## Installation
